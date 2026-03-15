@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Todo + Calendar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="top">
+    <div class="brand">
+      <div class="brand__dot"></div>
+      <div>
+        <h1>Todo ≽^•⩊•^≼
+        
+      </div>
+    </div>
+  </header>
+
+  <main class="app">
+    <section class="panel">
+      <div class="panel__header">
+        <h2>Calendar</h2>
+        <div class="calendar__nav">
+          <button id="prevMonth" class="icon">‹</button>
+          <div id="monthLabel" class="monthLabel" aria-live="polite"></div>
+          <button id="nextMonth" class="icon">›</button>
+        </div>
+      </div>
+
+      <div id="calendar" class="calendar" aria-label="Monthly calendar"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel__header">
+        <h2>Reminders</h2>
+        <p class="hint">Tap a day to filter; it stays until cleared.</p>
+      </div>
+
+      <form id="taskForm" class="taskForm" autocomplete="off">
+        <div class="field">
+          <label for="taskText">What to do</label>
+          <input id="taskText" name="taskText" placeholder="e.g. call mom" required />
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="taskDate">Date</label>
+            <input id="taskDate" name="taskDate" type="date" required />
+          </div>
+          <div class="field">
+            <label for="taskTime">Time</label>
+            <input id="taskTime" name="taskTime" type="time" />
+          </div>
+        </div>
+
+        
+
+        <div class="actions">
+          <button type="submit" class="primary">Add reminder</button>
+          <button type="button" id="clearFilter" class="secondary">Show all</button>
+        </div>
+      </form>
+
+      <div class="taskList">
+        <header class="taskList__header">
+          <h3>Upcoming</h3>
+          <span id="itemCount" class="badge">0</span>
+        </header>
+        <ul id="tasks" class="tasks" aria-label="Task list"></ul>
+      </div>
+
+      
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Made by Thecosmiccat :3</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
